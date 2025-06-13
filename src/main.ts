@@ -24,12 +24,12 @@ sesso → Può essere solo "m" o "f".
 anniDiServizio (array di numeri, es. [2014, 2015, 2017, 2018])*/
 
 type Dipendente = {
-  nome: string;
-  cognome: string;
-  annoNascita: number;
-  sesso: 'm' | 'f';
-  anniDiServizio: number[];
-}
+  nome: string
+  cognome: string
+  annoNascita: number
+  sesso: 'm' | 'f'
+  anniDiServizio: number[]
+};
 
 /*Snack 3
 Estendiamo Dipendente per definire due ruoli specifici all'interno dell'azienda:
@@ -41,3 +41,15 @@ ProjectManager
 teamSize → Il numero di persone nel team gestito dal Project Manager (può essere null se non ha ancora un team assegnato).
 budgetGestito → Il totale del budget annuale gestito dal PM (opzionale).
 stakeholderPrincipali → Un array di stringhe con i nomi dei principali stakeholder con cui il PM collabora (può essere vuoto).*/
+
+type Developer = Dipendente & {
+  livelloEsperienza: 'Junior' | 'Mid' | 'Senior'
+  linguaggi?: string[]
+  certificazioni: string[]
+}
+
+type ProjectManager = Dipendente & {
+  teamSize: number | null
+  bugdetGestito?: number
+  stakeholderPrincipali: string[]
+}
